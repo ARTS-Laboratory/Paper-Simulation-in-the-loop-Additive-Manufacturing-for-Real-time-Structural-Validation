@@ -1,0 +1,6 @@
+setup.py
+src/fea.egg-info/PKG-INFO
+src/fea.egg-info/SOURCES.txt
+src/fea.egg-info/dependency_links.txt
+src/fea.egg-info/top_level.txt
+test/test.py

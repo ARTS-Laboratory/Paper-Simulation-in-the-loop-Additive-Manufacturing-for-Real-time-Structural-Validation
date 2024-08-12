@@ -1,0 +1,15 @@
+numpy >= 1.20
+tensorflow
+scikit-learn
+scikit-image
+onnxruntime
+onnx
+tf2onnx
+skl2onnx
+opencv-python
+overrides
+dataclasses-json
+matplotlib
+SciencePlots
+segmentation_models
+watchdog
