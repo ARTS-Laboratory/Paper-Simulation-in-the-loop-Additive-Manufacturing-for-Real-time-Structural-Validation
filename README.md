@@ -40,5 +40,5 @@ Cite as:
   title  = {Paper-Simulation-in-the-loop-Additive-Manufacturing-for-Real-time-Structural-Validation},   
   year   = {2024},  
   groups = {{ARTS-L}ab},    
-  url    = {https://github.com/ARTS-Laboratory/Paper-Simulation-in-the-loop-Additive-Manufacturing-for-Real-time-Structural-Validation},    
+  url    = {https://github.com/ARTS-Laboratory/Simulation-in-the-loop-Additive-Manufacturing},    
 }
