@@ -37,7 +37,7 @@ Cite as:
 @Misc{Fu_2024_SimulationintheLoop,   
   author = {Yanzhou Fu and Austin R.J. Downey},   
   howpublished = {GitHub},  
-  title  = {Paper-Simulation-in-the-loop-Additive-Manufacturing-for-Real-time-Structural-Validation},   
+  title  = {Simulation-in-the-loop-Additive-Manufacturing},   
   year   = {2024},  
   groups = {{ARTS-L}ab},    
   url    = {https://github.com/ARTS-Laboratory/Simulation-in-the-loop-Additive-Manufacturing},    
