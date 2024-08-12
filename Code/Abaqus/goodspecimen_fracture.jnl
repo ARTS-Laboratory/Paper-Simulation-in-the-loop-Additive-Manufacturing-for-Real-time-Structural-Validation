@@ -1,0 +1,290 @@
+# -*- coding: mbcs -*-
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].ConstrainedSketch(name='__profile__', sheetSize=200.0)
+mdb.models['Model-1'].sketches['__profile__'].CircleByCenterPerimeter(center=(
+    0.0, 0.0), point1=(1.16665, 0.0))
+mdb.models['Model-1'].sketches['__profile__'].rectangle(point1=(7.0, 70.0), 
+    point2=(-7.0, -70.0))
+mdb.models['Model-1'].sketches.changeKey(fromName='__profile__', toName=
+    'specimen')
+mdb.models['Model-1'].ConstrainedSketch(name='__profile__', sheetSize=200.0)
+mdb.models['Model-1'].sketches['__profile__'].CircleByCenterPerimeter(center=(
+    0.0, 0.0), point1=(1.16665, 0.0))
+mdb.models['Model-1'].sketches['__profile__'].rectangle(point1=(7.0, 70.0), 
+    point2=(-7.0, -70.0))
+mdb.models['Model-1'].Part(dimensionality=THREE_D, name='Part-1', type=
+    DEFORMABLE_BODY)
+mdb.models['Model-1'].parts['Part-1'].BaseSolidExtrude(depth=0.32, sketch=
+    mdb.models['Model-1'].sketches['__profile__'])
+del mdb.models['Model-1'].sketches['__profile__']
+mdb.models['Model-1'].parts.changeKey(fromName='Part-1', toName='layer_1')
+mdb.models['Model-1'].Part(name='layer_2', objectToCopy=
+    mdb.models['Model-1'].parts['layer_1'])
+mdb.models['Model-1'].Part(name='layer_3', objectToCopy=
+    mdb.models['Model-1'].parts['layer_2'])
+mdb.models['Model-1'].Part(name='layer_4', objectToCopy=
+    mdb.models['Model-1'].parts['layer_3'])
+mdb.models['Model-1'].Part(name='layer_5', objectToCopy=
+    mdb.models['Model-1'].parts['layer_4'])
+mdb.models['Model-1'].Part(name='layer_6', objectToCopy=
+    mdb.models['Model-1'].parts['layer_5'])
+mdb.models['Model-1'].Part(name='layer_7', objectToCopy=
+    mdb.models['Model-1'].parts['layer_6'])
+mdb.models['Model-1'].Part(name='layer_8', objectToCopy=
+    mdb.models['Model-1'].parts['layer_7'])
+mdb.models['Model-1'].Part(name='layer_9', objectToCopy=
+    mdb.models['Model-1'].parts['layer_8'])
+mdb.models['Model-1'].Part(name='layer_10', objectToCopy=
+    mdb.models['Model-1'].parts['layer_9'])
+mdb.models['Model-1'].rootAssembly.DatumCsysByDefault(CARTESIAN)
+mdb.models['Model-1'].rootAssembly.Instance(dependent=ON, name='layer_1-1', 
+    part=mdb.models['Model-1'].parts['layer_1'])
+mdb.models['Model-1'].rootAssembly.Instance(dependent=ON, name='layer_2-1', 
+    part=mdb.models['Model-1'].parts['layer_2'])
+mdb.models['Model-1'].rootAssembly.Instance(dependent=ON, name='layer_3-1', 
+    part=mdb.models['Model-1'].parts['layer_3'])
+mdb.models['Model-1'].rootAssembly.Instance(dependent=ON, name='layer_4-1', 
+    part=mdb.models['Model-1'].parts['layer_4'])
+mdb.models['Model-1'].rootAssembly.Instance(dependent=ON, name='layer_5-1', 
+    part=mdb.models['Model-1'].parts['layer_5'])
+mdb.models['Model-1'].rootAssembly.Instance(dependent=ON, name='layer_6-1', 
+    part=mdb.models['Model-1'].parts['layer_6'])
+mdb.models['Model-1'].rootAssembly.Instance(dependent=ON, name='layer_7-1', 
+    part=mdb.models['Model-1'].parts['layer_7'])
+mdb.models['Model-1'].rootAssembly.Instance(dependent=ON, name='layer_8-1', 
+    part=mdb.models['Model-1'].parts['layer_8'])
+mdb.models['Model-1'].rootAssembly.Instance(dependent=ON, name='layer_9-1', 
+    part=mdb.models['Model-1'].parts['layer_9'])
+mdb.models['Model-1'].rootAssembly.Instance(dependent=ON, name='layer_10-1', 
+    part=mdb.models['Model-1'].parts['layer_10'])
+mdb.models['Model-1'].rootAssembly.instances['layer_2-1'].translate(vector=(
+    15.4, 0.0, 0.0))
+mdb.models['Model-1'].rootAssembly.instances['layer_3-1'].translate(vector=(
+    30.8, 0.0, 0.0))
+mdb.models['Model-1'].rootAssembly.instances['layer_4-1'].translate(vector=(
+    46.2, 0.0, 0.0))
+mdb.models['Model-1'].rootAssembly.instances['layer_5-1'].translate(vector=(
+    61.6, 0.0, 0.0))
+mdb.models['Model-1'].rootAssembly.instances['layer_6-1'].translate(vector=(
+    77.0, 0.0, 0.0))
+mdb.models['Model-1'].rootAssembly.instances['layer_7-1'].translate(vector=(
+    92.4, 0.0, 0.0))
+mdb.models['Model-1'].rootAssembly.instances['layer_8-1'].translate(vector=(
+    107.8, 0.0, 0.0))
+mdb.models['Model-1'].rootAssembly.instances['layer_9-1'].translate(vector=(
+    123.2, 0.0, 0.0))
+del mdb.models['Model-1'].rootAssembly.features['layer_10-1']
+mdb.models['Model-1'].rootAssembly.Instance(dependent=ON, name='layer_10-1', 
+    part=mdb.models['Model-1'].parts['layer_10'])
+mdb.models['Model-1'].rootAssembly.instances['layer_10-1'].translate(vector=(
+    138.6, 0.0, 0.0))
+mdb.models['Model-1'].rootAssembly.translate(instanceList=('layer_2-1', ), 
+    vector=(-15.4, 0.0, 0.32))
+mdb.models['Model-1'].rootAssembly.translate(instanceList=('layer_3-1', ), 
+    vector=(-30.8, 0.0, 0.64))
+mdb.models['Model-1'].rootAssembly.translate(instanceList=('layer_4-1', ), 
+    vector=(53.2, -70.0, 0.0))
+mdb.models['Model-1'].rootAssembly.translate(instanceList=('layer_5-1', ), 
+    vector=(-61.6, 0.0, 0.96))
+mdb.models['Model-1'].rootAssembly.deleteFeatures(('layer_1-1', 'layer_2-1', 
+    'layer_3-1', 'layer_4-1', 'layer_5-1', 'layer_6-1', 'layer_7-1', 
+    'layer_8-1', 'layer_9-1', 'layer_10-1'))
+mdb.models['Model-1'].rootAssembly.Instance(dependent=ON, name='layer_1-1', 
+    part=mdb.models['Model-1'].parts['layer_1'])
+mdb.models['Model-1'].rootAssembly.Instance(dependent=ON, name='layer_2-1', 
+    part=mdb.models['Model-1'].parts['layer_2'])
+mdb.models['Model-1'].rootAssembly.Instance(dependent=ON, name='layer_3-1', 
+    part=mdb.models['Model-1'].parts['layer_3'])
+mdb.models['Model-1'].rootAssembly.Instance(dependent=ON, name='layer_4-1', 
+    part=mdb.models['Model-1'].parts['layer_4'])
+mdb.models['Model-1'].rootAssembly.Instance(dependent=ON, name='layer_5-1', 
+    part=mdb.models['Model-1'].parts['layer_5'])
+mdb.models['Model-1'].rootAssembly.Instance(dependent=ON, name='layer_6-1', 
+    part=mdb.models['Model-1'].parts['layer_6'])
+mdb.models['Model-1'].rootAssembly.Instance(dependent=ON, name='layer_7-1', 
+    part=mdb.models['Model-1'].parts['layer_7'])
+mdb.models['Model-1'].rootAssembly.Instance(dependent=ON, name='layer_8-1', 
+    part=mdb.models['Model-1'].parts['layer_8'])
+mdb.models['Model-1'].rootAssembly.Instance(dependent=ON, name='layer_9-1', 
+    part=mdb.models['Model-1'].parts['layer_9'])
+mdb.models['Model-1'].rootAssembly.Instance(dependent=ON, name='layer_10-1', 
+    part=mdb.models['Model-1'].parts['layer_10'])
+mdb.models['Model-1'].rootAssembly.instances['layer_2-1'].translate(vector=(
+    15.4, 0.0, 0.0))
+mdb.models['Model-1'].rootAssembly.instances['layer_3-1'].translate(vector=(
+    30.8, 0.0, 0.0))
+mdb.models['Model-1'].rootAssembly.instances['layer_4-1'].translate(vector=(
+    46.2, 0.0, 0.0))
+mdb.models['Model-1'].rootAssembly.instances['layer_5-1'].translate(vector=(
+    61.6, 0.0, 0.0))
+mdb.models['Model-1'].rootAssembly.instances['layer_6-1'].translate(vector=(
+    77.0, 0.0, 0.0))
+mdb.models['Model-1'].rootAssembly.instances['layer_7-1'].translate(vector=(
+    92.4, 0.0, 0.0))
+mdb.models['Model-1'].rootAssembly.instances['layer_8-1'].translate(vector=(
+    107.8, 0.0, 0.0))
+mdb.models['Model-1'].rootAssembly.instances['layer_9-1'].translate(vector=(
+    123.2, 0.0, 0.0))
+mdb.models['Model-1'].rootAssembly.instances['layer_10-1'].translate(vector=(
+    138.6, 0.0, 0.0))
+mdb.models['Model-1'].rootAssembly.translate(instanceList=('layer_2-1', ), 
+    vector=(-15.4, 0.0, 0.32))
+mdb.models['Model-1'].rootAssembly.translate(instanceList=('layer_3-1', ), 
+    vector=(-30.8, 0.0, 0.64))
+mdb.models['Model-1'].rootAssembly.translate(instanceList=('layer_4-1', ), 
+    vector=(-46.2, 0.0, 0.96))
+mdb.models['Model-1'].rootAssembly.translate(instanceList=('layer_5-1', ), 
+    vector=(-61.6, 0.0, 1.28))
+mdb.models['Model-1'].rootAssembly.translate(instanceList=('layer_6-1', ), 
+    vector=(-77.0, 0.0, 1.6))
+mdb.models['Model-1'].rootAssembly.translate(instanceList=('layer_7-1', ), 
+    vector=(-92.4, 0.0, 1.92))
+mdb.models['Model-1'].rootAssembly.translate(instanceList=('layer_8-1', ), 
+    vector=(-107.8, 0.0, 2.24))
+mdb.models['Model-1'].rootAssembly.translate(instanceList=('layer_9-1', ), 
+    vector=(-123.2, 0.0, 2.56))
+mdb.models['Model-1'].rootAssembly.translate(instanceList=('layer_10-1', ), 
+    vector=(-138.6, 0.0, 2.88))
+mdb.models['Model-1'].rootAssembly.InstanceFromBooleanMerge(domain=GEOMETRY, 
+    instances=(mdb.models['Model-1'].rootAssembly.instances['layer_1-1'], 
+    mdb.models['Model-1'].rootAssembly.instances['layer_2-1'], 
+    mdb.models['Model-1'].rootAssembly.instances['layer_3-1'], 
+    mdb.models['Model-1'].rootAssembly.instances['layer_4-1'], 
+    mdb.models['Model-1'].rootAssembly.instances['layer_5-1'], 
+    mdb.models['Model-1'].rootAssembly.instances['layer_6-1'], 
+    mdb.models['Model-1'].rootAssembly.instances['layer_7-1'], 
+    mdb.models['Model-1'].rootAssembly.instances['layer_8-1'], 
+    mdb.models['Model-1'].rootAssembly.instances['layer_9-1'], 
+    mdb.models['Model-1'].rootAssembly.instances['layer_10-1']), 
+    keepIntersections=ON, name='specimen', originalInstances=SUPPRESS)
+mdb.models['Model-1'].parts['specimen'].DatumPlaneByPrincipalPlane(offset=40.0, 
+    principalPlane=XZPLANE)
+mdb.models['Model-1'].Material(name='pla')
+mdb.models['Model-1'].materials['pla'].Density(table=((1.36e-09, ), ))
+mdb.models['Model-1'].materials['pla'].Elastic(table=((3600, 0.3), ))
+mdb.models['Model-1'].materials['pla'].Plastic(scaleStress=None, table=((17.28, 
+    0.0), (19.44, 0.0054), (21.81, 0.006), (23.76, 0.0066), (25.69, 0.0072), (
+    34.5, 0.0102), (45.43, 0.015), (47.09, 0.0162)))
+mdb.models['Model-1'].materials['pla'].DuctileDamageInitiation(table=((0.25, 
+    1.35, 1.0), ))
+mdb.models['Model-1'].materials['pla'].ductileDamageInitiation.DamageEvolution(
+    table=((0.05, ), ), type=DISPLACEMENT)
+
+mdb.models['Model-1'].parts['specimen'].Set(cells=
+    mdb.models['Model-1'].parts['specimen'].cells.getSequenceFromMask((
+    '[#3ff ]', ), ), name='Set-1')
+mdb.models['Model-1'].parts['specimen'].SectionAssignment(offset=0.0, 
+    offsetField='', offsetType=MIDDLE_SURFACE, region=
+    mdb.models['Model-1'].parts['specimen'].sets['Set-1'], sectionName='PLA', 
+    thicknessAssignment=FROM_SECTION)
+mdb.models['Model-1'].rootAssembly.regenerate()
+mdb.models['Model-1'].parts['specimen'].DatumPlaneByPrincipalPlane(offset=-40.0
+    , principalPlane=XZPLANE)
+# Save by YANZHOUF on 2023_06_07-13.57.08; build 2023 2022_09_28-14.11.55 183150
+
+mdb.models['Model-1'].rootAssembly.regenerate()
+mdb.models['Model-1'].ExplicitDynamicsStep(improvedDtMethod=ON, massScaling=((
+    SEMI_AUTOMATIC, MODEL, AT_BEGINNING, 0.0, 0.0001, BELOW_MIN, 0, 0, 0.0, 
+    0.0, 0, None), ), name='Step-1', previous='Initial')
+mdb.models['Model-1'].rootAssembly.Set(cells=
+    mdb.models['Model-1'].rootAssembly.instances['specimen-1'].cells.getSequenceFromMask(
+    ('[#3ff ]', ), ), name='Set-1')
+del mdb.models['Model-1'].parts['specimen'].sets['Set-1']
+mdb.models['Model-1'].parts['specimen'].PartitionCellByDatumPlane(cells=
+    mdb.models['Model-1'].parts['specimen'].cells.getSequenceFromMask((
+    '[#3ff ]', ), ), datumPlane=
+    mdb.models['Model-1'].parts['specimen'].datums[2])
+mdb.models['Model-1'].parts['specimen'].PartitionCellByDatumPlane(cells=
+    mdb.models['Model-1'].parts['specimen'].cells.getSequenceFromMask((
+    '[#801ff ]', ), ), datumPlane=
+    mdb.models['Model-1'].parts['specimen'].datums[4])
+mdb.models['Model-1'].rootAssembly.regenerate()
+mdb.models['Model-1'].rootAssembly.Set(cells=
+    mdb.models['Model-1'].rootAssembly.instances['specimen-1'].cells.getSequenceFromMask(
+    ('[#801ff ]', ), ), edges=
+    mdb.models['Model-1'].rootAssembly.instances['specimen-1'].edges.getSequenceFromMask(
+    ('[#80000000 #60c18303 #60c1830 #cc60021c #80cccccc #88888883 #88 ]', ), ), 
+    faces=
+    mdb.models['Model-1'].rootAssembly.instances['specimen-1'].faces.getSequenceFromMask(
+    ('[#92492400 #49280124 #c30e0492 #30c30c30 #420c ]', ), ), name='Set-2', 
+    vertices=
+    mdb.models['Model-1'].rootAssembly.instances['specimen-1'].vertices.getSequenceFromMask(
+    ('[#10c00000 #c1111111 #10aaaa4 ]', ), ))
+mdb.models['Model-1'].EncastreBC(createStepName='Initial', localCsys=None, 
+    name='FIXED', region=mdb.models['Model-1'].rootAssembly.sets['Set-2'])
+mdb.models['Model-1'].TabularAmplitude(data=((0.0, 0.0), (0.1, 0.1), (0.2, 
+    0.2), (0.3, 0.3), (0.4, 0.4), (0.5, 0.5), (0.6, 0.6), (0.7, 0.7), (0.8, 
+    0.8), (0.9, 0.9), (1.0, 1.0)), name='Amp-1', smooth=SOLVER_DEFAULT, 
+    timeSpan=STEP)
+mdb.models['Model-1'].rootAssembly.Set(cells=
+    mdb.models['Model-1'].rootAssembly.instances['specimen-1'].cells.getSequenceFromMask(
+    ('[#3ff00000 ]', ), ), edges=
+    mdb.models['Model-1'].rootAssembly.instances['specimen-1'].edges.getSequenceFromMask(
+    ('[#0:3 #33800000 #7b333333 #7777777c #177 ]', ), ), faces=
+    mdb.models['Model-1'].rootAssembly.instances['specimen-1'].faces.getSequenceFromMask(
+    ('[#0 #92500000 #2cb14924 #cb2cb2cb #2cb2 ]', ), ), name='Set-3', vertices=
+    mdb.models['Model-1'].rootAssembly.instances['specimen-1'].vertices.getSequenceFromMask(
+    ('[#0:2 #fed55558 #7 ]', ), ))
+mdb.models['Model-1'].DisplacementBC(amplitude='Amp-1', createStepName='Step-1'
+    , distributionType=UNIFORM, fieldName='', fixed=OFF, localCsys=None, name=
+    'LOAD', region=mdb.models['Model-1'].rootAssembly.sets['Set-3'], u1=0.0, 
+    u2=10.0, u3=0.0, ur1=0.0, ur2=0.0, ur3=0.0)
+mdb.models['Model-1'].parts['specimen'].setMeshControls(regions=
+    mdb.models['Model-1'].parts['specimen'].cells.getSequenceFromMask((
+    '[#3fffffff ]', ), ), technique=SWEEP)
+mdb.models['Model-1'].parts['specimen'].seedPart(deviationFactor=0.1, 
+    minSizeFactor=0.1, size=1.0)
+mdb.models['Model-1'].parts['specimen'].generateMesh()
+mdb.models['Model-1'].parts['specimen'].setElementType(elemTypes=(ElemType(
+    elemCode=C3D8R, elemLibrary=EXPLICIT, secondOrderAccuracy=OFF, 
+    kinematicSplit=AVERAGE_STRAIN, hourglassControl=DEFAULT, 
+    distortionControl=DEFAULT, elemDeletion=ON, maxDegradation=0.98), ElemType(
+    elemCode=C3D6, elemLibrary=EXPLICIT), ElemType(elemCode=C3D4, 
+    elemLibrary=EXPLICIT)), regions=(
+    mdb.models['Model-1'].parts['specimen'].cells.getSequenceFromMask((
+    '[#3fffffff ]', ), ), ))
+# Save by YANZHOUF on 2023_06_07-14.33.35; build 2023 2022_09_28-14.11.55 183150
+
+mdb.models['Model-1'].rootAssembly.regenerate()
+mdb.models['Model-1'].rootAssembly.Set(cells=
+    mdb.models['Model-1'].rootAssembly.instances['specimen-1'].cells.getSequenceFromMask(
+    ('[#7fe00 ]', ), ), name='GAUGERANGE')
+mdb.models['Model-1'].fieldOutputRequests['F-Output-1'].setValues(rebar=EXCLUDE
+    , region=mdb.models['Model-1'].rootAssembly.sets['GAUGERANGE'], 
+    sectionPoints=DEFAULT, variables=('MISESMAX', ))
+mdb.models['Model-1'].historyOutputRequests['H-Output-1'].setValues(rebar=
+    EXCLUDE, region=mdb.models['Model-1'].rootAssembly.sets['GAUGERANGE'], 
+    sectionPoints=DEFAULT, variables=('U2', 'RF2'))
+mdb.Job(activateLoadBalancing=False, atTime=None, contactPrint=OFF, 
+    description='', echoPrint=OFF, explicitPrecision=SINGLE, historyPrint=OFF, 
+    memory=90, memoryUnits=PERCENTAGE, model='Model-1', modelPrint=OFF, 
+    multiprocessingMode=DEFAULT, name='Job-FRACTURE', nodalOutputPrecision=
+    SINGLE, numCpus=32, numDomains=32, numThreadsPerMpiProcess=1, queue=None, 
+    resultsFormat=ODB, scratch='', type=ANALYSIS, userSubroutine='', waitHours=
+    0, waitMinutes=0)
+del mdb.models['Model-1'].sections['PLA']
+mdb.models['Model-1'].HomogeneousSolidSection(material='pla', name='SPECIMEN', 
+    thickness=None)
+mdb.models['Model-1'].parts['specimen'].Set(cells=
+    mdb.models['Model-1'].parts['specimen'].cells.getSequenceFromMask((
+    '[#3fffffff ]', ), ), name='Set-3')
+mdb.models['Model-1'].parts['specimen'].SectionAssignment(offset=0.0, 
+    offsetField='', offsetType=MIDDLE_SURFACE, region=
+    mdb.models['Model-1'].parts['specimen'].sets['Set-3'], sectionName=
+    'SPECIMEN', thicknessAssignment=FROM_SECTION)
+# Save by YANZHOUF on 2023_06_07-14.45.30; build 2023 2022_09_28-14.11.55 183150
+
+mdb.models['Model-1'].rootAssembly.regenerate()
+mdb.jobs['Job-FRACTURE'].submit(consistencyChecking=OFF, datacheckJob=True)
