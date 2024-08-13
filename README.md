@@ -3,19 +3,19 @@
 This repo accompanies a paper submitted to Additive Manufacturing 2024 and contains a reproduction of the methodology demonstrated in that paper.
 
 <p align="center">
-<img src="figures/simulation_in_the_loop.png" alt="framework of simulation-in-the-loop " width="600"/>
+<img src="Figures/simulation_in_the_loop.png" alt="framework of simulation-in-the-loop " width="600"/>
 
 The framework of simulation-in-the-loop real-time FEA product structural quality validation system.
 </p>
 
 <p align="center">
-<img src="figures/image_segmentation.png" alt="defect segmentation" width="600"/>
+<img src="Figures/image_segmentation.png" alt="defect segmentation" width="600"/>
 
 The defect segmentation process with U-net.
 </p>
 
 <p align="center">
-<img src="figures/architecture.png" alt="process of real-time automatic FEA structural quality validation" width="600"/>
+<img src="Figures/architecture.png" alt="process of real-time automatic FEA structural quality validation" width="600"/>
 
 The process of real-time automatic FEA structural quality validation on the fourth layer.
 </p>
