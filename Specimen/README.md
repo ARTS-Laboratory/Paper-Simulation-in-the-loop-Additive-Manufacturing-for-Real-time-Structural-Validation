@@ -1,0 +1,1 @@
+Those are the Gcode to print the specimen good or with defects.
