@@ -1,6 +1,6 @@
 # Simulation-in-the-loop Additive Manufacturing for Real-time Structural Validation
 
-This repo accompanies a paper submitted to Additive Manufacturing 2024 and contains a reproduction of the methodology demonstrated in that paper.
+This repo accompanies a paper submitted to Additive Manufacturing in 2024 and contains a reproduction of the methodology demonstrated in that paper.
 
 <p align="center">
 <img src="figures/simulation_in_the_loop.png" alt="framework of simulation-in-the-loop " width="600"/>
