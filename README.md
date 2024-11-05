@@ -53,7 +53,9 @@ The provided code has the following folder structure, where the files are struct
 
 
 The Code folder contains the two parts: 1) the generated Abaqus Python Script from the simulation and 2)the code for running the FEA simulation.
+
 The Data folder contains the three parts: 1) Defect segmentation results, 2) DIC test results, and 3) Tensile test results.
+
 The Specimen folder is the Gcode for the specimen used in the paper
 
 
