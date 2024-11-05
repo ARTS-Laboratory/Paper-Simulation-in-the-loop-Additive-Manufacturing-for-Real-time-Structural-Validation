@@ -20,6 +20,51 @@ The defect segmentation process with U-net.
 The process of real-time automatic FEA structural quality validation on the fourth layer.
 </p>
 
+## Requirements
+* Python 3.8.5
+* Abaqus 2022
+* numpy >= 1.20
+* tensorflow
+* scikit-learn
+* scikit-image
+* onnxruntime
+* onnx
+* tf2onnx
+* skl2onnx
+* opencv-python
+* overrides
+* dataclasses-json
+* matplotlib
+* SciencePlots
+* segmentation_models
+* watchdog
+
+## File structure
+The provided code has the following folder structure, where the files are structured based on the stage of the pipeline. 
+
+- Code
+    - FEA
+	- final_3d_printer_fea
+- Data
+    - Defect segmentation results
+	- DIC test results
+	- Tensile test results
+- Specimen
+
+
+The Code folder contains the two parts: 1) the generated Abaqus Python Script from the simulation and 2)the code for running the FEA simulation.
+The Data folder contains the three parts: 1) Defect segmentation results, 2) DIC test results, and 3) Tensile test results.
+The Specimen folder is the Gcode for the specimen used in the paper
+
+
+
+## How to run the code
+1. cd .....\3d_printer_fea
+2. conda activate fea_printing(Virtual Enbvironment)  
+3. python main.py
+
+
+
 ## Licensing and Citation
 
 [![CC BY-SA 4.0][cc-by-sa-shield]][cc-by-sa]
