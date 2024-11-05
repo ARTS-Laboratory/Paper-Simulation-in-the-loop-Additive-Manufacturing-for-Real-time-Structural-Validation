@@ -61,11 +61,14 @@ The Specimen folder is the Gcode for the specimen used in the paper
 
 
 ## How to run the code
-1. cd .....\3d_printer_fea
-2. conda activate fea_printing(Virtual Enbvironment)  
+1. cd .....\final_3d_printer_fea
+2. conda activate fea_printing(Virtual Environment)  
 3. python main.py
 
-
+## Notes
+1. Replacing the trained image segmentation result(here: New_specimen_with_prosity_and_long_gap.hdf5 in test folder) with your own.
+2. Pay attention to the image size, in the paper we use 1368 X 1020, which is resized to 512 X 512 before input into U-net.
+3. Replacing the pregenerated Abaqus Python Script(here: Abaqus_simulation.py ) with your own.
 
 ## Licensing and Citation
 

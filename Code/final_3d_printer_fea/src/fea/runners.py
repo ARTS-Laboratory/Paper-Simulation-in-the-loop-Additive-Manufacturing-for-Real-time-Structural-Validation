@@ -57,7 +57,7 @@ class DummyRunner(FEARunner):
         #if len(curr_contours) == 1702:
         if curr_layer == 0:
             return
-        #os.system("abaqus cae noGUI=goodspecimen_fracture.py")
+        #os.system("abaqus cae noGUI=Abaqus_simulation.py")
         os.system("abaqus cae script=goodspecimen_fracture.py")
 
 
