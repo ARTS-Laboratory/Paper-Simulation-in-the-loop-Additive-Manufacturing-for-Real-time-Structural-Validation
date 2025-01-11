@@ -244,9 +244,7 @@ list_of_files = glob.glob('test\pkl_outputs\*') # * means all if need specific f
 latest_file = max(list_of_files, key=os.path.getctime)
 latestPKL = os.path.basename(latest_file)
 
-#%%
-current_layer = latestPKL[0:1]
-print('current layer is ' + current_layer)
+
 layers_with_defect = []
 layersNO_with_defect = []
 porosity = []
@@ -1011,3 +1009,7 @@ mdb.models['Model-1'].materials['pla10'].DuctileDamageInitiation(table=((0.25,
     1.35, 1.0), ))
 mdb.models['Model-1'].materials['pla10'].ductileDamageInitiation.DamageEvolution(
     table=((0.05, ), ), type=DISPLACEMENT)
+    
+#%%
+#current_layer = latestPKL[0:1]
+#print('current layer is ' + current_layer)
